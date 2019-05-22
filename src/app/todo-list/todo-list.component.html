@@ -1,0 +1,18 @@
+<section>
+  <ol>
+    <li
+      [ngClass]="{ complete: toDo.completed }"
+      *ngFor="let toDo of todoList; index as i"
+    >
+      <button
+        *ngIf="!toDo.completed"
+        class="completeButton"
+        (click)="completeTask(i)"
+      >
+        Complete
+      </button>
+      {{ toDo.task }}
+      <i class="material-icons" (click)="removeTodo(i)">close</i>
+    </li>
+  </ol>
+</section>
